@@ -1,0 +1,97 @@
+<%= form_with(model: customer) do |form| %>
+  <% if customer.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(customer.errors.count, "error") %> prohibited this customer from being saved:</h2>
+
+      <ul>
+        <% customer.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :name, style: "display: block" %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :city, style: "display: block" %>
+    <%= form.text_area :city %>
+  </div>
+
+  <div>
+    <%= form.label :contact, style: "display: block" %>
+    <%= form.text_field :contact %>
+  </div>
+
+  <div>
+    <%= form.label :pant_lambai, style: "display: block" %>
+    <%= form.text_field :pant_lambai %>
+  </div>
+
+  <div>
+    <%= form.label :pant_mori, style: "display: block" %>
+    <%= form.text_field :pant_mori %>
+  </div>
+
+  <div>
+    <%= form.label :pant_kamar, style: "display: block" %>
+    <%= form.text_field :pant_kamar %>
+  </div>
+
+  <div>
+    <%= form.label :pant_seat, style: "display: block" %>
+    <%= form.text_field :pant_seat %>
+  </div>
+
+  <div>
+    <%= form.label :pant_jang, style: "display: block" %>
+    <%= form.text_field :pant_jang %>
+  </div>
+
+  <div>
+    <%= form.label :pant_joro, style: "display: block" %>
+    <%= form.text_field :pant_joro %>
+  </div>
+
+  <div>
+    <%= form.label :shirt_kolar, style: "display: block" %>
+    <%= form.text_field :shirt_kolar %>
+  </div>
+
+  <div>
+    <%= form.label :shirt_lambai, style: "display: block" %>
+    <%= form.text_field :shirt_lambai %>
+  </div>
+
+  <div>
+    <%= form.label :shirt_shoulder, style: "display: block" %>
+    <%= form.text_field :shirt_shoulder %>
+  </div>
+
+  <div>
+    <%= form.label :shirt_baay, style: "display: block" %>
+    <%= form.text_field :shirt_baay %>
+  </div>
+
+  <div>
+    <%= form.label :shirt_chhati, style: "display: block" %>
+    <%= form.text_field :shirt_chhati %>
+  </div>
+
+  <div>
+    <%= form.label :shirt_kamar, style: "display: block" %>
+    <%= form.text_field :shirt_kamar %>
+  </div>
+
+  <div>
+    <%= form.label :shirt_seat, style: "display: block" %>
+    <%= form.text_field :shirt_seat %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
