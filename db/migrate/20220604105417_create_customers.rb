@@ -2,7 +2,7 @@ class CreateCustomers < ActiveRecord::Migration[7.0]
   def change
     create_table :customers do |t|
       t.string :name
-      t.text :city
+      t.string :city
       t.string :contact
       t.string :pant_lambai
       t.string :pant_mori
@@ -17,6 +17,7 @@ class CreateCustomers < ActiveRecord::Migration[7.0]
       t.string :shirt_chhati
       t.string :shirt_kamar
       t.string :shirt_seat
+      t.date :delivery_date
 
       t.timestamps
     end

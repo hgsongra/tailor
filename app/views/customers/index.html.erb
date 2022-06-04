@@ -1,14 +1,60 @@
-<p style="color: green"><%= notice %></p>
+<div class="row pagetitle">
+  <div class="col-lg-6">
+    <h1>Customers</h1>
+  </div>
+  <div class="col-lg-3 justify-content-end">
+    <%= form_tag root_path, method: :get, class: "d-flex" do %>
+      <%= text_field_tag :query, params[:query], class: "form-control me-2", type: "search", placeholder: "Search Name or City or Contact No.", "aria-label": "Search"  %>
+      <%= submit_tag "Search", class: "btn btn-outline-success", type: "submit" %>
+    <%end%>
+  </div>
+  <div class="col-lg-3 justify-content-end">
+    <%= link_to "New customer", new_customer_path, class: "btn btn-primary" %>
+  </div>
+</div><!-- End Page Title -->
 
-<h1>Customers</h1>
+<section class="section">
+  <div class="row">
+    <div class="col-lg-12">
 
-<div id="customers">
-  <% @customers.each do |customer| %>
-    <%= render customer %>
-    <p>
-      <%= link_to "Show this customer", customer %>
-    </p>
-  <% end %>
+      <div class="card">
+        <div class="card-body">
+
+          <!-- Default Table -->
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Customer#</th>
+                <th scope="col">Name</th>
+                <th scope="col">City</th>
+                <th scope="col">Contact No.</th>
+                <th scope="col">Delivery Date</th>
+                <th scope="col" colspan="3">Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <%if @customers.length > 0 %>
+                <% @customers.each do |customer| %>
+                  <%= render customer %>
+                <% end %>
+              <% else %>
+                  <tr>
+                    <td>
+                      <div class="alert alert-danger">
+                        No reords found.
+                      </div>
+                    </td>
+                  </tr>
+              <% end %>
+            </tbody>
+          </table>
+          <!-- End Default Table Example -->
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="col-lg-12 custom-page">
+  <%= paginate @customers %>
 </div>
-
-<%= link_to "New customer", new_customer_path %>

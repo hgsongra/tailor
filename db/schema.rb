@@ -13,7 +13,7 @@
 ActiveRecord::Schema[7.0].define(version: 2022_06_04_105818) do
   create_table "customers", force: :cascade do |t|
     t.string "name"
-    t.text "city"
+    t.string "city"
     t.string "contact"
     t.string "pant_lambai"
     t.string "pant_mori"
@@ -28,6 +28,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_04_105818) do
     t.string "shirt_chhati"
     t.string "shirt_kamar"
     t.string "shirt_seat"
+    t.date "delivery_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

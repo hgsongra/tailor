@@ -1,9 +1,13 @@
-<h1>New customer</h1>
+
+<div class="pagetitle">
+  <h1>New Customer</h1>
+</div>
 
 <%= render "form", customer: @customer %>
 
-<br>
 
-<div>
-  <%= link_to "Back to customers", customers_path %>
+<div class="row mt-2">
+  <div class="col-lg-6">
+    <%= link_to "<<< Back to Customers List", customers_path, class: "btn btn-outline-primary" %>
+  </div>
 </div>

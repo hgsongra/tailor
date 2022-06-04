@@ -1,82 +1,10 @@
-<div id="<%= dom_id customer %>">
-  <p>
-    <strong>Name:</strong>
-    <%= customer.name %>
-  </p>
-
-  <p>
-    <strong>City:</strong>
-    <%= customer.city %>
-  </p>
-
-  <p>
-    <strong>Contact:</strong>
-    <%= customer.contact %>
-  </p>
-
-  <p>
-    <strong>Pant lambai:</strong>
-    <%= customer.pant_lambai %>
-  </p>
-
-  <p>
-    <strong>Pant mori:</strong>
-    <%= customer.pant_mori %>
-  </p>
-
-  <p>
-    <strong>Pant kamar:</strong>
-    <%= customer.pant_kamar %>
-  </p>
-
-  <p>
-    <strong>Pant seat:</strong>
-    <%= customer.pant_seat %>
-  </p>
-
-  <p>
-    <strong>Pant jang:</strong>
-    <%= customer.pant_jang %>
-  </p>
-
-  <p>
-    <strong>Pant joro:</strong>
-    <%= customer.pant_joro %>
-  </p>
-
-  <p>
-    <strong>Shirt kolar:</strong>
-    <%= customer.shirt_kolar %>
-  </p>
-
-  <p>
-    <strong>Shirt lambai:</strong>
-    <%= customer.shirt_lambai %>
-  </p>
-
-  <p>
-    <strong>Shirt shoulder:</strong>
-    <%= customer.shirt_shoulder %>
-  </p>
-
-  <p>
-    <strong>Shirt baay:</strong>
-    <%= customer.shirt_baay %>
-  </p>
-
-  <p>
-    <strong>Shirt chhati:</strong>
-    <%= customer.shirt_chhati %>
-  </p>
-
-  <p>
-    <strong>Shirt kamar:</strong>
-    <%= customer.shirt_kamar %>
-  </p>
-
-  <p>
-    <strong>Shirt seat:</strong>
-    <%= customer.shirt_seat %>
-  </p>
-
-</div>
+<tr>
+  <th scope="row"><%= customer.id %></th>
+  <td><%= customer.name %></td>
+  <td><%= customer.city %></td>
+  <td><%= customer.contact %></td>
+  <td><%= customer.delivery_date %></td>
+  <td><%= link_to "Show", customer, class: "btn btn-outline-primary" %></td>
+  <td><%= link_to "Edit", edit_customer_path(customer), class: "btn btn-outline-secondary" %></td>
+  <td><%= button_to "Delete", customer, method: :delete, class: "btn btn-outline-danger" %></td>
+</tr>
