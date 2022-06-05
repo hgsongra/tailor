@@ -1,6 +1,6 @@
 
 <div class="pagetitle">
-  <h1>Show Customer</h1>
+  <h1>ગ્રાહકની માહિતી</h1>
 </div>
 
 <section class="section">
@@ -8,15 +8,18 @@
       <div class="col-lg-12  mt-2">
         <div class="card">
           <div class="row card-body">
-            <h5 class="card-title">Customer Details</h5>
+            <h5 class="card-title">ગ્રાહકની વિગતો</h5>
             <div class="col">
-              Name: <br> <%= @customer.name %>
+              <b>નામ:</b> <br> <%= @customer.name %>
             </div>
             <div class="col">
-              City: <br> <%= @customer.city %>
+              <b>ગામ:</b> <br> <%= @customer.city %>
             </div>
             <div class="col">
-              contact: <br> <%= @customer.contact %>
+              <b>મોબાઇલ નંબર:</b> <br> <%= @customer.contact %>
+            </div>
+            <div class="col">
+              <b>ડિલિવરી તારીખ:</b> <br> <%= @customer.delivery_date %>
             </div>
           </div>
         </div>
@@ -25,24 +28,24 @@
       <div class="col-lg-12 mt-2">
         <div class="card">
           <div class="row card-body">
-            <h5 class="card-title">Pant Details</h5>
+            <h5 class="card-title">પેન્ટની વિગતો</h5>
             <div class="col">
-              pant_lambai: <br> <%= @customer.pant_lambai %>
+              <b>લંબાઈ:</b> <br> <%= @customer.pant_lambai %>
             </div>
             <div class="col">
-              pant_mori: <br> <%= @customer.pant_mori %>
+              <b>મોરી:</b> <br> <%= @customer.pant_mori %>
             </div>
             <div class="col">
-              pant_kamar: <br> <%= @customer.pant_kamar %>
+              <b>કમર:</b> <br> <%= @customer.pant_kamar %>
             </div>
             <div class="col">
-            pant_lambai: <br> <%= @customer.pant_lambai %>
+            <b>સીટ:</b> <br> <%= @customer.pant_seat %>
             </div>
             <div class="col">
-              pant_lambai: <br> <%= @customer.pant_lambai %>
+              <b>જાંગ:</b> <br> <%= @customer.pant_jang %>
             </div>
             <div class="col">
-              pant_lambai: <br> <%= @customer.pant_lambai %>
+              <b>જોરો:</b> <br> <%= @customer.pant_joro %>
             </div>
           </div>
         </div>
@@ -52,27 +55,27 @@
       <div class="col-lg-12  mt-2">
         <div class="card">
           <div class="row card-body">
-            <h5 class="card-title">Shirt Details</h5>
+            <h5 class="card-title">શર્ટની વિગતો</h5>
             <div class="col">
-              pant_lambai: <br> <%= @customer.pant_lambai %>
+              <b>કોલર:</b> <br> <%= @customer.shirt_kolar %>
             </div>
             <div class="col">
-              pant_lambai: <br> <%= @customer.pant_lambai %>
+              <b>લંબાઈ:</b> <br> <%= @customer.shirt_lambai %>
             </div>
             <div class="col">
-              pant_lambai: <br> <%= @customer.pant_lambai %>
+              <b>શોલ્ડર:</b> <br> <%= @customer.shirt_shoulder %>
             </div>
             <div class="col">
-              pant_lambai: <br> <%= @customer.pant_lambai %>
+              <b>બાય:</b> <br> <%= @customer.shirt_baay %>
             </div>
             <div class="col">
-              pant_lambai: <br> <%= @customer.pant_lambai %>
+              <b>છાતી:</b> <br> <%= @customer.shirt_chhati %>
             </div>
             <div class="col">
-              pant_lambai: <br> <%= @customer.pant_lambai %>
+              <b>કમર:</b> <br> <%= @customer.shirt_kamar %>
             </div>
             <div class="col">
-              pant_lambai: <br> <%= @customer.pant_lambai %>
+              <b>સીટ:</b> <br> <%= @customer.shirt_seat %>
             </div>
           </div>
         </div>
@@ -83,10 +86,10 @@
 
 <div class="row mt-2">
   <div class="col-lg-6">
-    <%= link_to "Edit", edit_customer_path(@customer), class: "btn btn-outline-primary" %> 
-    <%= link_to "<<< Back to Customers List", customers_path, class: "btn btn-outline-primary" %>
+    <%= link_to "ગ્રાહકમાં ફેરફાર કરો", edit_customer_path(@customer), class: "btn btn-outline-primary" %> 
+    <%= link_to "<<< ગ્રાહકોની સૂચિ પર પાછા ફરો", customers_path, class: "btn btn-outline-primary" %>
   </div>
   <div class="col-lg-6">
-    <%= button_to "Destroy this customer", @customer, method: :delete, class: "btn btn-outline-danger" %>
+    <%= button_to "ગ્રાહકને દૂર કરો", @customer, method: :delete, class: "btn btn-outline-danger" %>
   </div>
 </div>

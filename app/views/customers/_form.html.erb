@@ -16,21 +16,21 @@
       <div class="col-lg-12">
         <div class="card">
           <div class="row card-body">
-            <h5 class="card-title">Customer Details</h5>
+            <h5 class="card-title">ગ્રાહકની વિગતો</h5>
             <div class="col">
-              <%= form.label :name, class: "form-label" %>
+              <%= form.label :name, "નામ", class: "form-label" %>
               <%= form.text_field :name, class:"form-control", id:"name", required: true %>
             </div>
             <div class="col">
-              <%= form.label :city, class: "form-label" %>
+              <%= form.label :city, "ગામ", class: "form-label" %>
               <%= form.text_field :city, class:"form-control", id:"city", required: true %>
             </div>
             <div class="col">
-              <%= form.label :contact, class: "form-label" %>
-              <%= form.telephone_field :contact, class:"form-control", id:"contact", required: true %>
+              <%= form.label :contact, "મોબાઇલ નંબર", class: "form-label" %>
+              <%= form.number_field :contact, class:"form-control", id:"contact", required: true %>
             </div>
             <div class="col">
-              <%= form.label :delivery_date, class: "form-label" %>
+              <%= form.label :delivery_date, "ડિલિવરી તારીખ", class: "form-label" %>
               <%= form.date_field :delivery_date, class:"form-control", id:"delivery_date", value: form.object.delivery_date, required: true %>
             </div>
           </div>
@@ -40,30 +40,30 @@
       <div class="col-lg-12">
         <div class="card">
           <div class="row card-body">
-            <h5 class="card-title">Pant Details</h5>
+            <h5 class="card-title">પેન્ટની વિગતો</h5>
             <div class="col">
-              <%= form.label :pant_lambai, class: "form-label" %>
-              <%= form.text_field :pant_lambai, class:"form-control", id:"pant_lambai", required: true %>
+              <%= form.label :pant_lambai, "લંબાઈ", class: "form-label" %>
+              <%= form.number_field :pant_lambai, step: :any, class:"form-control", id:"pant_lambai", required: true %>
             </div>
             <div class="col">
-              <%= form.label :pant_mori, class: "form-label" %>
-              <%= form.text_field :pant_mori, class:"form-control", id:"pant_mori", required: true %>
+              <%= form.label :pant_mori, "મોરી", class: "form-label" %>
+              <%= form.number_field :pant_mori, step: :any, class:"form-control", id:"pant_mori", required: true %>
             </div>
             <div class="col">
-              <%= form.label :pant_kamar, class: "form-label" %>
-              <%= form.text_field :pant_kamar, class:"form-control", id:"pant_kamar", required: true %>
+              <%= form.label :pant_kamar, "કમર", class: "form-label" %>
+              <%= form.number_field :pant_kamar, step: :any, class:"form-control", id:"pant_kamar", required: true %>
             </div>
             <div class="col">
-              <%= form.label :pant_seat, class: "form-label" %>
-              <%= form.text_field :pant_seat, class:"form-control", id:"pant_seat", required: true %>
+              <%= form.label :pant_seat, "સીટ", class: "form-label" %>
+              <%= form.number_field :pant_seat, step: :any, class:"form-control", id:"pant_seat", required: true %>
             </div>
             <div class="col">
-              <%= form.label :pant_jang, class: "form-label" %>
-              <%= form.text_field :pant_jang, class:"form-control", id:"pant_jang", required: true %>
+              <%= form.label :pant_jang, "જાંગ", class: "form-label" %>
+              <%= form.number_field :pant_jang, step: :any, class:"form-control", id:"pant_jang", required: true %>
             </div>
             <div class="col">
-              <%= form.label :pant_joro, class: "form-label" %>
-              <%= form.text_field :pant_joro, class:"form-control", id:"pant_joro", required: true %>
+              <%= form.label :pant_joro, "જોરો", class: "form-label" %>
+              <%= form.number_field :pant_joro, step: :any, class:"form-control", id:"pant_joro", required: true %>
             </div>
           </div>
         </div>
@@ -73,41 +73,41 @@
       <div class="col-lg-12">
         <div class="card">
           <div class="row card-body">
-            <h5 class="card-title">Shirt Details</h5>
+            <h5 class="card-title">શર્ટની વિગતો</h5>
             <div class="col">
-              <%= form.label :shirt_kolar, class: "form-label" %>
-              <%= form.text_field :shirt_kolar, class:"form-control", id:"shirt_kolar", required: true %>
+              <%= form.label :shirt_kolar, "કોલર", class: "form-label" %>
+              <%= form.number_field :shirt_kolar, step: :any, class:"form-control", id:"shirt_kolar", required: true %>
             </div>
             <div class="col">
-              <%= form.label :shirt_lambai, class: "form-label" %>
-              <%= form.text_field :shirt_lambai, class:"form-control", id:"shirt_lambai", required: true %>
+              <%= form.label :shirt_lambai, "લંબાઈ", class: "form-label" %>
+              <%= form.number_field :shirt_lambai, step: :any, class:"form-control", id:"shirt_lambai", required: true %>
             </div>
             <div class="col">
-              <%= form.label :shirt_shoulder, class: "form-label" %>
-              <%= form.text_field :shirt_shoulder, class:"form-control", id:"shirt_shoulder", required: true %>
+              <%= form.label :shirt_shoulder, "શોલ્ડર", class: "form-label" %>
+              <%= form.number_field :shirt_shoulder, step: :any, class:"form-control", id:"shirt_shoulder", required: true %>
             </div>
             <div class="col">
-              <%= form.label :shirt_baay, class: "form-label" %>
-              <%= form.text_field :shirt_baay, class:"form-control", id:"shirt_baay", required: true %>
+              <%= form.label :shirt_baay, "બાય", class: "form-label" %>
+              <%= form.number_field :shirt_baay, step: :any, class:"form-control", id:"shirt_baay", required: true %>
             </div>
             <div class="col">
-              <%= form.label :shirt_chhati, class: "form-label" %>
-              <%= form.text_field :shirt_chhati, class:"form-control", id:"shirt_chhati", required: true %>
+              <%= form.label :shirt_chhati, "છાતી", class: "form-label" %>
+              <%= form.number_field :shirt_chhati, step: :any, class:"form-control", id:"shirt_chhati", required: true %>
             </div>
             <div class="col">
-              <%= form.label :shirt_kamar, class: "form-label" %>
-              <%= form.text_field :shirt_kamar, class:"form-control", id:"shirt_kamar", required: true %>
+              <%= form.label :shirt_kamar, "કમર", class: "form-label" %>
+              <%= form.number_field :shirt_kamar, step: :any, class:"form-control", id:"shirt_kamar", required: true %>
             </div>
             <div class="col">
-              <%= form.label :shirt_seat, class: "form-label" %>
-              <%= form.text_field :shirt_seat, class:"form-control", id:"shirt_seat", required: true %>
+              <%= form.label :shirt_seat, "સીટ", class: "form-label" %>
+              <%= form.number_field :shirt_seat, step: :any, class:"form-control", id:"shirt_seat", required: true %>
             </div>
           </div>
         </div>
       </div>
             
       <div class="justify-content-start">
-        <%= form.submit(class: "btn btn-primary") %>
+        <%= form.submit( (customer.new_record? ? "નવો ગ્રાહક ઉમેરો" : "ગ્રાહકની માહિતી સુધારો"), class: "btn btn-primary") %>
       </div>
     <%end%><!-- End Multi Columns Form -->
   </div>

@@ -26,7 +26,7 @@ class CustomersController < ApplicationController
 
     respond_to do |format|
       if @customer.save
-        format.html { redirect_to customer_url(@customer), notice: "Customer was successfully created." }
+        format.html { redirect_to customer_url(@customer), notice: "નવો ગ્રાહક સફળતાપૂર્વક બનાવવામાં આવ્યો છે." }
         format.json { render :show, status: :created, location: @customer }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -39,7 +39,7 @@ class CustomersController < ApplicationController
   def update
     respond_to do |format|
       if @customer.update(customer_params)
-        format.html { redirect_to customer_url(@customer), notice: "Customer was successfully updated." }
+        format.html { redirect_to customer_url(@customer), notice: "ગ્રાહકની વિગતો સફળતાપૂર્વક અપડેટ કરવામાં આવી છે." }
         format.json { render :show, status: :ok, location: @customer }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -53,7 +53,7 @@ class CustomersController < ApplicationController
     @customer.destroy
 
     respond_to do |format|
-      format.html { redirect_to customers_url, notice: "Customer was successfully destroyed." }
+      format.html { redirect_to customers_url, notice: "ગ્રાહકને સફળતાપૂર્વક દૂર કરવામાં આવ્યો." }
       format.json { head :no_content }
     end
   end
@@ -66,6 +66,6 @@ class CustomersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def customer_params
-      params.require(:customer).permit(:name, :city, :contact, :pant_lambai, :pant_mori, :pant_kamar, :pant_seat, :pant_jang, :pant_joro, :shirt_kolar, :shirt_lambai, :shirt_shoulder, :shirt_baay, :shirt_chhati, :shirt_kamar, :shirt_seat)
+      params.require(:customer).permit(:name, :city, :contact, :pant_lambai, :pant_mori, :pant_kamar, :pant_seat, :pant_jang, :pant_joro, :shirt_kolar, :shirt_lambai, :shirt_shoulder, :shirt_baay, :shirt_chhati, :shirt_kamar, :shirt_seat, :delivery_date)
     end
 end
