@@ -34,3 +34,13 @@
     background-color: #e0e7f1;
     border-radius: 10px;
 }
+
+@media print {
+    .btn, .navbar-toggler {
+      display: none;
+    }
+    * {
+        -webkit-print-color-adjust: exact !important; /*Chrome, Safari */
+        color-adjust: exact !important;  /*Firefox*/
+    }
+}
