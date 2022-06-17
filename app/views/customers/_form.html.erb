@@ -105,6 +105,17 @@
           </div>
         </div>
       </div>
+
+      <div class="col-lg-12">
+        <div class="card">
+          <div class="row card-body">
+            <h5 class="card-title">નોંધ</h5>
+            <div class="col">
+              <%= form.text_area :notes, class:"form-control", id:"notes" %>
+            </div>
+          </div>
+        </div>
+      </div>
             
       <div class="justify-content-start">
         <%= form.submit( (customer.new_record? ? "નવો ગ્રાહક ઉમેરો" : "ગ્રાહકની માહિતી સુધારો"), class: "btn btn-primary") %>

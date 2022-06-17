@@ -1,17 +1,17 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light mb-3">
   <div class="container-fluid">
     <a class="navbar-brand" href="/"><%=image_tag("ridham-logo.png", width: "330", alt: "Ridham tailors")%></a>
+    <% if user_signed_in? %>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-      <ul class="navbar-nav">
-        <% if user_signed_in? %>
-            <li class="nav-item">
-                <%= button_to "સાઇન આઉટ કરો", destroy_user_session_path, method: :delete, class: "btn btn-danger" %>
-            </li>
-        <%end%>
-      </ul>
-    </div>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <%= button_to "સાઇન આઉટ કરો", destroy_user_session_path, method: :delete, class: "btn btn-danger m-2" %>
+          </li>
+        </ul>
+      </div>
+    <%end%>
   </div>
 </nav>

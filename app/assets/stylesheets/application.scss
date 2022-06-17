@@ -39,8 +39,4 @@
     .btn, .navbar-toggler {
       display: none;
     }
-    * {
-        -webkit-print-color-adjust: exact !important; /*Chrome, Safari */
-        color-adjust: exact !important;  /*Firefox*/
-    }
 }

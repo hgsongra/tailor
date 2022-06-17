@@ -15,6 +15,9 @@
           <div class="row card-body">
             <h5 class="card-title">ગ્રાહકની વિગતો</h5>
             <div class="col">
+              <b><%= "ગ્રાહક#" %></b> <br> <%= @customer.id %>
+            </div>
+            <div class="col">
               <b>નામ:</b> <br> <%= @customer.name %>
             </div>
             <div class="col">
@@ -57,7 +60,7 @@
       </div>
 
 
-      <div class="col-lg-12  mt-2">
+      <div class="col-lg-12 mt-2">
         <div class="card">
           <div class="row card-body">
             <h5 class="card-title">શર્ટની વિગતો</h5>
@@ -85,16 +88,28 @@
           </div>
         </div>
       </div>
+
+
+      <div class="col-lg-12 mt-2">
+        <div class="card">
+          <div class="row card-body">
+            <h5 class="card-title">નોંધ</h5>
+            <div class="col p-2">
+              <%= @customer.notes %>
+            </div>
+          </div>
+        </div>
+      </div>
   </div>
 </section>
 
 
 <div class="row mt-2">
   <div class="col-lg-6">
-    <%= link_to "ગ્રાહકમાં ફેરફાર કરો", edit_customer_path(@customer), class: "btn btn-outline-primary" %> 
-    <%= link_to "<<< ગ્રાહકોની સૂચિ પર પાછા ફરો", customers_path, class: "btn btn-outline-primary" %>
+    <%= link_to "ગ્રાહકમાં ફેરફાર કરો", edit_customer_path(@customer), class: "btn btn-outline-primary m-1" %> 
+    <%= link_to "<<< ગ્રાહકોની સૂચિ પર પાછા ફરો", customers_path, class: "btn btn-outline-primary m-1" %>
   </div>
   <div class="col-lg-6">
-    <%= button_to "ગ્રાહકને દૂર કરો", @customer, method: :delete, class: "btn btn-outline-danger" %>
+    <%= button_to "ગ્રાહકને દૂર કરો", @customer, method: :delete, class: "btn btn-outline-danger m-1" %>
   </div>
 </div>
