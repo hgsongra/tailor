@@ -3,7 +3,7 @@
     <%= form_with(model: customer, html: {class: "row g-3"}) do |form| %>
       <% if customer.errors.any? %>
         <div class="col-lg-12" style="color: red">
-          <h2><%= pluralize(customer.errors.count, "error") %> prohibited this customer from being saved:</h2>
+          <h2><%= pluralize(customer.errors.count, "error") %> આ ગ્રાહકને સાચવવામાં અસફળ થયો:</h2>
 
           <ul>
             <% customer.errors.each do |error| %>
@@ -13,86 +13,90 @@
         </div>
       <% end %>
       
-      <div class="col-lg-12">
+      <div class="col-12">
         <div class="card">
-          <div class="row card-body">
+          <div class="card-body">
             <h5 class="card-title"><i class="bi bi-person-vcard me-2"></i>ગ્રાહકની વિગતો</h5>
-            <div class="col">
-              <%= form.label :name, "નામ", class: "form-label" %>
-              <div class="input-group">
-                <span class="input-group-text"><i class="bi bi-person-fill"></i></span>
-                <%= form.text_field :name, class:"form-control", id:"name", required: true %>
+            <div class="row g-3">
+              <div class="col-12 col-sm-6 col-lg-3">
+                <%= form.label :name, "નામ", class: "form-label" %>
+                <div class="input-group">
+                  <span class="input-group-text"><i class="bi bi-person-fill"></i></span>
+                  <%= form.text_field :name, class:"form-control", id:"name", required: true %>
+                </div>
               </div>
-            </div>
-            <div class="col">
-              <%= form.label :city, "ગામ", class: "form-label" %>
-              <div class="input-group">
-                <span class="input-group-text"><i class="bi bi-geo-alt-fill"></i></span>
-                <%= form.text_field :city, class:"form-control", id:"city", required: true %>
+              <div class="col-12 col-sm-6 col-lg-3">
+                <%= form.label :city, "ગામ", class: "form-label" %>
+                <div class="input-group">
+                  <span class="input-group-text"><i class="bi bi-geo-alt-fill"></i></span>
+                  <%= form.text_field :city, class:"form-control", id:"city", required: true %>
+                </div>
               </div>
-            </div>
-            <div class="col">
-              <%= form.label :contact, "મોબાઇલ નંબર", class: "form-label" %>
-              <div class="input-group">
-                <span class="input-group-text"><i class="bi bi-telephone-fill"></i></span>
-                <%= form.text_field :contact, class:"form-control", id:"contact", required: true, maxlength: 10, pattern: "[0-9]{10}", title: "મોબાઇલ નંબર 10 અંકનો હોવો જોઈએ" %>
+              <div class="col-12 col-sm-6 col-lg-3">
+                <%= form.label :contact, "મોબાઇલ નંબર", class: "form-label" %>
+                <div class="input-group">
+                  <span class="input-group-text"><i class="bi bi-telephone-fill"></i></span>
+                  <%= form.text_field :contact, class:"form-control", id:"contact", required: true, maxlength: 10, pattern: "[0-9]{10}", title: "મોબાઇલ નંબર 10 અંકનો હોવો જોઈએ" %>
+                </div>
               </div>
-            </div>
-            <div class="col">
-              <%= form.label :delivery_date, "ડિલિવરી તારીખ", class: "form-label" %>
-              <div class="input-group">
-                <span class="input-group-text"><i class="bi bi-calendar-event-fill"></i></span>
-                <%= form.date_field :delivery_date, class:"form-control", id:"delivery_date", value: form.object.delivery_date %>
+              <div class="col-12 col-sm-6 col-lg-3">
+                <%= form.label :delivery_date, "ડિલિવરી તારીખ", class: "form-label" %>
+                <div class="input-group">
+                  <span class="input-group-text"><i class="bi bi-calendar-event-fill"></i></span>
+                  <%= form.date_field :delivery_date, class:"form-control", id:"delivery_date", value: form.object.delivery_date, min: Date.current %>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="col-lg-12">
+      <div class="col-12">
         <div class="card">
-          <div class="row card-body">
+          <div class="card-body">
             <h5 class="card-title"><i class="bi bi-rulers me-2"></i>પેન્ટની વિગતો</h5>
-            <div class="col">
-              <%= form.label :pant_lambai, "લંબાઈ", class: "form-label" %>
-              <div class="input-group">
-                <span class="input-group-text"><i class="bi bi-arrows-vertical"></i></span>
-                <%= form.number_field :pant_lambai, step: :any, class:"form-control", id:"pant_lambai", required: true %>
+            <div class="row g-3">
+              <div class="col-6 col-sm-4 col-lg-2">
+                <%= form.label :pant_lambai, "લંબાઈ", class: "form-label" %>
+                <div class="input-group">
+                  <span class="input-group-text"><i class="bi bi-arrows-vertical"></i></span>
+                  <%= form.number_field :pant_lambai, step: :any, class:"form-control", id:"pant_lambai", required: true %>
+                </div>
               </div>
-            </div>
-            <div class="col">
-              <%= form.label :pant_mori, "મોરી", class: "form-label" %>
-              <div class="input-group">
-                <span class="input-group-text"><i class="bi bi-arrows-expand"></i></span>
-                <%= form.number_field :pant_mori, step: :any, class:"form-control", id:"pant_mori", required: true %>
+              <div class="col-6 col-sm-4 col-lg-2">
+                <%= form.label :pant_mori, "મોરી", class: "form-label" %>
+                <div class="input-group">
+                  <span class="input-group-text"><i class="bi bi-arrows-expand"></i></span>
+                  <%= form.number_field :pant_mori, step: :any, class:"form-control", id:"pant_mori", required: true %>
+                </div>
               </div>
-            </div>
-            <div class="col">
-              <%= form.label :pant_kamar, "કમર", class: "form-label" %>
-              <div class="input-group">
-                <span class="input-group-text"><i class="bi bi-arrows-collapse"></i></span>
-                <%= form.number_field :pant_kamar, step: :any, class:"form-control", id:"pant_kamar", required: true %>
+              <div class="col-6 col-sm-4 col-lg-2">
+                <%= form.label :pant_kamar, "કમર", class: "form-label" %>
+                <div class="input-group">
+                  <span class="input-group-text"><i class="bi bi-arrows-collapse"></i></span>
+                  <%= form.number_field :pant_kamar, step: :any, class:"form-control", id:"pant_kamar", required: true %>
+                </div>
               </div>
-            </div>
-            <div class="col">
-              <%= form.label :pant_seat, "સીટ", class: "form-label" %>
-              <div class="input-group">
-                <span class="input-group-text"><i class="bi bi-arrows-fullscreen"></i></span>
-                <%= form.number_field :pant_seat, step: :any, class:"form-control", id:"pant_seat", required: true %>
+              <div class="col-6 col-sm-4 col-lg-2">
+                <%= form.label :pant_seat, "સીટ", class: "form-label" %>
+                <div class="input-group">
+                  <span class="input-group-text"><i class="bi bi-arrows-fullscreen"></i></span>
+                  <%= form.number_field :pant_seat, step: :any, class:"form-control", id:"pant_seat", required: true %>
+                </div>
               </div>
-            </div>
-            <div class="col">
-              <%= form.label :pant_jang, "જાંગ", class: "form-label" %>
-              <div class="input-group">
-                <span class="input-group-text"><i class="bi bi-arrows-angle-expand"></i></span>
-                <%= form.number_field :pant_jang, step: :any, class:"form-control", id:"pant_jang", required: true %>
+              <div class="col-6 col-sm-4 col-lg-2">
+                <%= form.label :pant_jang, "જાંગ", class: "form-label" %>
+                <div class="input-group">
+                  <span class="input-group-text"><i class="bi bi-arrows-angle-expand"></i></span>
+                  <%= form.number_field :pant_jang, step: :any, class:"form-control", id:"pant_jang", required: true %>
+                </div>
               </div>
-            </div>
-            <div class="col">
-              <%= form.label :pant_joro, "જોરો", class: "form-label" %>
-              <div class="input-group">
-                <span class="input-group-text"><i class="bi bi-arrows-move"></i></span>
-                <%= form.number_field :pant_joro, step: :any, class:"form-control", id:"pant_joro", required: true %>
+              <div class="col-6 col-sm-4 col-lg-2">
+                <%= form.label :pant_joro, "જોરો", class: "form-label" %>
+                <div class="input-group">
+                  <span class="input-group-text"><i class="bi bi-arrows-move"></i></span>
+                  <%= form.number_field :pant_joro, step: :any, class:"form-control", id:"pant_joro", required: true %>
+                </div>
               </div>
             </div>
           </div>
@@ -100,84 +104,88 @@
       </div>
 
 
-      <div class="col-lg-12">
+      <div class="col-12">
         <div class="card">
-          <div class="row card-body">
+          <div class="card-body">
             <h5 class="card-title"><i class="bi bi-rulers me-2"></i>શર્ટની વિગતો</h5>
-            <div class="col">
-              <%= form.label :shirt_kolar, "કોલર", class: "form-label" %>
-              <div class="input-group">
-                <span class="input-group-text"><i class="bi bi-circle"></i></span>
-                <%= form.number_field :shirt_kolar, step: :any, class:"form-control", id:"shirt_kolar", required: true %>
+            <div class="row g-3">
+              <div class="col-6 col-sm-4 col-lg">
+                <%= form.label :shirt_kolar, "કોલર", class: "form-label" %>
+                <div class="input-group">
+                  <span class="input-group-text"><i class="bi bi-circle"></i></span>
+                  <%= form.number_field :shirt_kolar, step: :any, class:"form-control", id:"shirt_kolar", required: true %>
+                </div>
               </div>
-            </div>
-            <div class="col">
-              <%= form.label :shirt_lambai, "લંબાઈ", class: "form-label" %>
-              <div class="input-group">
-                <span class="input-group-text"><i class="bi bi-arrows-vertical"></i></span>
-                <%= form.number_field :shirt_lambai, step: :any, class:"form-control", id:"shirt_lambai", required: true %>
+              <div class="col-6 col-sm-4 col-lg">
+                <%= form.label :shirt_lambai, "લંબાઈ", class: "form-label" %>
+                <div class="input-group">
+                  <span class="input-group-text"><i class="bi bi-arrows-vertical"></i></span>
+                  <%= form.number_field :shirt_lambai, step: :any, class:"form-control", id:"shirt_lambai", required: true %>
+                </div>
               </div>
-            </div>
-            <div class="col">
-              <%= form.label :shirt_shoulder, "શોલ્ડર", class: "form-label" %>
-              <div class="input-group">
-                <span class="input-group-text"><i class="bi bi-arrows-expand"></i></span>
-                <%= form.number_field :shirt_shoulder, step: :any, class:"form-control", id:"shirt_shoulder", required: true %>
+              <div class="col-6 col-sm-4 col-lg">
+                <%= form.label :shirt_shoulder, "શોલ્ડર", class: "form-label" %>
+                <div class="input-group">
+                  <span class="input-group-text"><i class="bi bi-arrows-expand"></i></span>
+                  <%= form.number_field :shirt_shoulder, step: :any, class:"form-control", id:"shirt_shoulder", required: true %>
+                </div>
               </div>
-            </div>
-            <div class="col">
-              <%= form.label :shirt_baay, "બાય", class: "form-label" %>
-              <div class="input-group">
-                <span class="input-group-text"><i class="bi bi-arrow-right"></i></span>
-                <%= form.number_field :shirt_baay, step: :any, class:"form-control", id:"shirt_baay", required: true %>
+              <div class="col-6 col-sm-4 col-lg">
+                <%= form.label :shirt_baay, "બાય", class: "form-label" %>
+                <div class="input-group">
+                  <span class="input-group-text"><i class="bi bi-arrow-right"></i></span>
+                  <%= form.number_field :shirt_baay, step: :any, class:"form-control", id:"shirt_baay", required: true %>
+                </div>
               </div>
-            </div>
-            <div class="col">
-              <%= form.label :shirt_chhati, "છાતી", class: "form-label" %>
-              <div class="input-group">
-                <span class="input-group-text"><i class="bi bi-arrows-fullscreen"></i></span>
-                <%= form.number_field :shirt_chhati, step: :any, class:"form-control", id:"shirt_chhati", required: true %>
+              <div class="col-6 col-sm-4 col-lg">
+                <%= form.label :shirt_chhati, "છાતી", class: "form-label" %>
+                <div class="input-group">
+                  <span class="input-group-text"><i class="bi bi-arrows-fullscreen"></i></span>
+                  <%= form.number_field :shirt_chhati, step: :any, class:"form-control", id:"shirt_chhati", required: true %>
+                </div>
               </div>
-            </div>
-            <div class="col">
-              <%= form.label :shirt_kamar, "કમર", class: "form-label" %>
-              <div class="input-group">
-                <span class="input-group-text"><i class="bi bi-arrows-collapse"></i></span>
-                <%= form.number_field :shirt_kamar, step: :any, class:"form-control", id:"shirt_kamar", required: true %>
+              <div class="col-6 col-sm-4 col-lg">
+                <%= form.label :shirt_kamar, "કમર", class: "form-label" %>
+                <div class="input-group">
+                  <span class="input-group-text"><i class="bi bi-arrows-collapse"></i></span>
+                  <%= form.number_field :shirt_kamar, step: :any, class:"form-control", id:"shirt_kamar", required: true %>
+                </div>
               </div>
-            </div>
-            <div class="col">
-              <%= form.label :shirt_seat, "સીટ", class: "form-label" %>
-              <div class="input-group">
-                <span class="input-group-text"><i class="bi bi-arrows-angle-expand"></i></span>
-                <%= form.number_field :shirt_seat, step: :any, class:"form-control", id:"shirt_seat", required: true %>
+              <div class="col-6 col-sm-4 col-lg">
+                <%= form.label :shirt_seat, "સીટ", class: "form-label" %>
+                <div class="input-group">
+                  <span class="input-group-text"><i class="bi bi-arrows-angle-expand"></i></span>
+                  <%= form.number_field :shirt_seat, step: :any, class:"form-control", id:"shirt_seat", required: true %>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="col-lg-12">
+      <div class="col-12">
         <div class="card">
-          <div class="row card-body">
+          <div class="card-body">
             <h5 class="card-title"><i class="bi bi-journal-text me-2"></i>નોંધ</h5>
-            <div class="col">
-              <div class="input-group">
-                <span class="input-group-text"><i class="bi bi-pencil-square"></i></span>
-                <%= form.text_area :notes, class:"form-control", id:"notes" %>
+            <div class="row">
+              <div class="col-12">
+                <div class="input-group">
+                  <span class="input-group-text"><i class="bi bi-pencil-square"></i></span>
+                  <%= form.text_area :notes, class:"form-control", id:"notes", rows: 3 %>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
             
-      <div class="justify-content-start">
+      <div class="col-12">
         <% if customer.new_record? %>
-          <%= form.button class: "btn btn-primary", type: "submit" do %>
+          <%= form.button class: "btn btn-primary btn-lg w-100 w-sm-auto", type: "submit" do %>
             <i class="bi bi-person-plus-fill me-1"></i>નવો ગ્રાહક ઉમેરો
           <% end %>
         <% else %>
-          <%= form.button class: "btn btn-primary", type: "submit" do %>
+          <%= form.button class: "btn btn-primary btn-lg w-100 w-sm-auto", type: "submit" do %>
             <i class="bi bi-pencil-fill me-1"></i>ગ્રાહકની માહિતી સુધારો
           <% end %>
         <% end %>

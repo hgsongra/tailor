@@ -1,18 +1,18 @@
-<div class="row pagetitle">
-  <div class="col-lg-6">
-    <h1><i class="bi bi-people-fill me-2"></i>ગ્રાહકોની યાદી</h1>
+<div class="row pagetitle g-3">
+  <div class="col-12 col-lg-4">
+    <h1 class="h3"><i class="bi bi-people-fill me-2"></i>ગ્રાહકોની યાદી</h1>
   </div>
-  <div class="col-lg-3 justify-content-end">
-    <%= form_tag root_path, method: :get, class: "d-flex" do %>
-      <div class="input-group">
+  <div class="col-12 col-lg-5">
+    <%= form_tag root_path, method: :get, class: "d-flex flex-column flex-sm-row" do %>
+      <div class="input-group mb-2 mb-sm-0">
         <span class="input-group-text"><i class="bi bi-search"></i></span>
-        <%= text_field_tag :query, params[:query], class: "form-control", type: "search", placeholder: "નામ અથવા ગામ અથવા મોબાઇલ નંબર દ્વારા શોધો.", "aria-label": "Search"  %>
+        <%= text_field_tag :query, params[:query], class: "form-control", type: "search", placeholder: "નામ/ગામ/મોબાઇલ થી શોધો...", "aria-label": "Search"  %>
       </div>
-      <%= submit_tag "શોધો", class: "btn btn-outline-success ms-2", type: "submit" %>
+      <%= submit_tag "શોધો", class: "btn btn-success ms-sm-2", type: "submit" %>
     <%end%>
   </div>
-  <div class="col-lg-3 justify-content-end">
-    <%= link_to new_customer_path, class: "btn btn-primary m-1" do %>
+  <div class="col-12 col-lg-3 d-flex justify-content-lg-end">
+    <%= link_to new_customer_path, class: "btn btn-primary w-100 w-lg-auto" do %>
       <i class="bi bi-person-plus-fill me-1"></i>નવા ગ્રાહક ઉમેરો
     <% end %>
   </div>
@@ -26,15 +26,15 @@
         <div class="card-body table-responsive">
 
           <!-- Default Table -->
-          <table class="table">
+          <table class="table table-hover">
             <thead>
               <tr>
-                <th scope="col"><%= "ગ્રાહક#" %></th>
-                <th scope="col">નામ</th>
-                <th scope="col">ગામ</th>
-                <th scope="col">મોબાઇલ નંબર</th>
-                <th scope="col">ડિલિવરી તારીખ</th>
-                <th scope="col" colspan="3">ગ્રાહકની ક્રિયાઓ</th>
+                <th scope="col"><i class="bi bi-person-badge me-1"></i><%= "ગ્રાહક#" %></th>
+                <th scope="col"><i class="bi bi-person-fill me-1"></i>નામ</th>
+                <th scope="col" class="d-none d-md-table-cell"><i class="bi bi-geo-alt-fill me-1"></i>ગામ</th>
+                <th scope="col" class="d-none d-md-table-cell"><i class="bi bi-telephone-fill me-1"></i>મોબાઇલ નંબર</th>
+                <th scope="col" class="d-none d-lg-table-cell"><i class="bi bi-calendar-event-fill me-1"></i>ડિલિવરી તારીખ</th>
+                <th scope="col" colspan="3"><i class="bi bi-gear-fill me-1"></i>ક્રિયાઓ</th>
               </tr>
             </thead>
             <tbody>
