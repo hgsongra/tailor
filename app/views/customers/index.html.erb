@@ -3,12 +3,12 @@
     <h1 class="h3"><i class="bi bi-people-fill me-2"></i>ગ્રાહકોની યાદી</h1>
   </div>
   <div class="col-12 col-lg-5">
-    <%= form_tag root_path, method: :get, class: "d-flex flex-column flex-sm-row" do %>
-      <div class="input-group mb-2 mb-sm-0">
+    <%= form_tag root_path, method: :get, class: "d-flex" do %>
+      <div class="input-group">
         <span class="input-group-text"><i class="bi bi-search"></i></span>
         <%= text_field_tag :query, params[:query], class: "form-control", type: "search", placeholder: "નામ/ગામ/મોબાઇલ થી શોધો...", "aria-label": "Search"  %>
+        <button type="submit" class="btn btn-success"><i class="bi bi-search me-1"></i>શોધો</button>
       </div>
-      <button type="submit" class="btn btn-success ms-sm-2"><i class="bi bi-search me-1"></i>શોધો</button>
     <%end%>
   </div>
   <div class="col-12 col-lg-3 d-flex justify-content-lg-end">
@@ -18,7 +18,7 @@
   </div>
 </div><!-- End Page Title -->
 
-<section class="section">
+<section class="section mt-3">
   <div class="row">
     <div class="col-lg-12">
 
