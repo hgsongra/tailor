@@ -1,5 +1,5 @@
 <div class="customLogin">
-  <h2>Change your password</h2>
+  <h2><i class="bi bi-shield-lock-fill me-2"></i>Change your password</h2>
 
   <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
     <%= render "devise/shared/error_messages", resource: resource %>
@@ -10,16 +10,24 @@
       <% if @minimum_password_length %>
         <em>(<%= @minimum_password_length %> characters minimum)</em><br />
       <% end %>
-      <%= f.password_field :password, autofocus: true, autocomplete: "new-password", class:"form-control", required: true %>
+      <div class="input-group">
+        <span class="input-group-text"><i class="bi bi-lock-fill"></i></span>
+        <%= f.password_field :password, autofocus: true, autocomplete: "new-password", class:"form-control", required: true, placeholder: "Enter new password" %>
+      </div>
     </div>
 
     <div class="col mt-2">
       <%= f.label :password_confirmation, "Confirm new password", class: "form-label" %>
-      <%= f.password_field :password_confirmation, autocomplete: "new-password" , class:"form-control", required: true %>
+      <div class="input-group">
+        <span class="input-group-text"><i class="bi bi-lock-fill"></i></span>
+        <%= f.password_field :password_confirmation, autocomplete: "new-password" , class:"form-control", required: true, placeholder: "Confirm new password" %>
+      </div>
     </div>
 
     <div class="actions mt-2 mb-2">
-      <%= f.submit "Change my password" , class: "btn btn-primary" %>
+      <%= f.button class: "btn btn-primary", type: "submit" do %>
+        <i class="bi bi-check-circle-fill me-1"></i>Change my password
+      <% end %>
     </div>
   <% end %>
 
