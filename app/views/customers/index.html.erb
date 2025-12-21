@@ -8,7 +8,7 @@
         <span class="input-group-text"><i class="bi bi-search"></i></span>
         <%= text_field_tag :query, params[:query], class: "form-control", type: "search", placeholder: "નામ/ગામ/મોબાઇલ થી શોધો...", "aria-label": "Search"  %>
       </div>
-      <%= submit_tag "શોધો", class: "btn btn-success ms-sm-2", type: "submit" %>
+      <button type="submit" class="btn btn-success ms-sm-2"><i class="bi bi-search me-1"></i>શોધો</button>
     <%end%>
   </div>
   <div class="col-12 col-lg-3 d-flex justify-content-lg-end">
