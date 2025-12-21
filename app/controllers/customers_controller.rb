@@ -4,7 +4,8 @@ class CustomersController < ApplicationController
 
   # GET /customers or /customers.json
   def index
-    @customers = Customer.where('name ILIKE :q OR city ILIKE :q OR contact ILIKE :q', q: "%#{params[:query]}%").page(params[:page] || 1)
+    search_query = "%#{params[:query]&.downcase}%"
+    @customers = Customer.where('LOWER(name) LIKE :q OR LOWER(city) LIKE :q OR LOWER(contact) LIKE :q', q: search_query).page(params[:page] || 1)
   end
 
   # GET /customers/1 or /customers/1.json
