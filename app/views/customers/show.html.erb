@@ -1,10 +1,12 @@
 
 <div class="row pagetitle">
   <div class="col-lg-6">
-    <h1>ગ્રાહકની માહિતી</h1>
+    <h1><i class="bi bi-person-badge-fill me-2"></i>ગ્રાહકની માહિતી</h1>
   </div>
   <div class="col-lg-6 justify-content-end">
-    <%= link_to 'પ્રિન્ટ કરો', '#', :onclick => "window.print();return false;", class: "btn btn-primary" %>
+    <%= link_to '#', :onclick => "window.print();return false;", class: "btn btn-primary" do %>
+      <i class="bi bi-printer-fill me-1"></i>પ્રિન્ટ કરો
+    <% end %>
   </div>
 </div>
 
@@ -13,21 +15,21 @@
       <div class="col-lg-12  mt-2">
         <div class="card">
           <div class="row card-body">
-            <h5 class="card-title">ગ્રાહકની વિગતો</h5>
+            <h5 class="card-title"><i class="bi bi-person-vcard me-2"></i>ગ્રાહકની વિગતો</h5>
             <div class="col">
-              <b><%= "ગ્રાહક#" %></b> <br> <%= @customer.id %>
+              <b><i class="bi bi-hash me-1"></i><%= "ગ્રાહક#" %></b> <br> <%= @customer.id %>
             </div>
             <div class="col">
-              <b>નામ:</b> <br> <%= @customer.name %>
+              <b><i class="bi bi-person-fill me-1"></i>નામ:</b> <br> <%= @customer.name %>
             </div>
             <div class="col">
-              <b>ગામ:</b> <br> <%= @customer.city %>
+              <b><i class="bi bi-geo-alt-fill me-1"></i>ગામ:</b> <br> <%= @customer.city %>
             </div>
             <div class="col">
-              <b>મોબાઇલ નંબર:</b> <br> <%= @customer.contact %>
+              <b><i class="bi bi-telephone-fill me-1"></i>મોબાઇલ નંબર:</b> <br> <%= @customer.contact %>
             </div>
             <div class="col">
-              <b>ડિલિવરી તારીખ:</b> <br> <%= @customer.delivery_date %>
+              <b><i class="bi bi-calendar-event-fill me-1"></i>ડિલિવરી તારીખ:</b> <br> <%= @customer.delivery_date %>
             </div>
           </div>
         </div>
@@ -36,54 +38,24 @@
       <div class="col-lg-12 mt-2">
         <div class="card">
           <div class="row card-body">
-            <h5 class="card-title">પેન્ટની વિગતો</h5>
+            <h5 class="card-title"><i class="bi bi-rulers me-2"></i>પેન્ટની વિગતો</h5>
             <div class="col">
-              <b>લંબાઈ:</b> <br> <%= @customer.pant_lambai %>
+              <b><i class="bi bi-arrows-vertical me-1"></i>લંબાઈ:</b> <br> <%= @customer.pant_lambai %>
             </div>
             <div class="col">
-              <b>મોરી:</b> <br> <%= @customer.pant_mori %>
+              <b><i class="bi bi-arrows-expand me-1"></i>મોરી:</b> <br> <%= @customer.pant_mori %>
             </div>
             <div class="col">
-              <b>કમર:</b> <br> <%= @customer.pant_kamar %>
+              <b><i class="bi bi-arrows-collapse me-1"></i>કમર:</b> <br> <%= @customer.pant_kamar %>
             </div>
             <div class="col">
-            <b>સીટ:</b> <br> <%= @customer.pant_seat %>
+              <b><i class="bi bi-arrows-fullscreen me-1"></i>સીટ:</b> <br> <%= @customer.pant_seat %>
             </div>
             <div class="col">
-              <b>જાંગ:</b> <br> <%= @customer.pant_jang %>
+              <b><i class="bi bi-arrows-angle-expand me-1"></i>જાંગ:</b> <br> <%= @customer.pant_jang %>
             </div>
             <div class="col">
-              <b>જોરો:</b> <br> <%= @customer.pant_joro %>
-            </div>
-          </div>
-        </div>
-      </div>
-
-
-      <div class="col-lg-12 mt-2">
-        <div class="card">
-          <div class="row card-body">
-            <h5 class="card-title">શર્ટની વિગતો</h5>
-            <div class="col">
-              <b>કોલર:</b> <br> <%= @customer.shirt_kolar %>
-            </div>
-            <div class="col">
-              <b>લંબાઈ:</b> <br> <%= @customer.shirt_lambai %>
-            </div>
-            <div class="col">
-              <b>શોલ્ડર:</b> <br> <%= @customer.shirt_shoulder %>
-            </div>
-            <div class="col">
-              <b>બાય:</b> <br> <%= @customer.shirt_baay %>
-            </div>
-            <div class="col">
-              <b>છાતી:</b> <br> <%= @customer.shirt_chhati %>
-            </div>
-            <div class="col">
-              <b>કમર:</b> <br> <%= @customer.shirt_kamar %>
-            </div>
-            <div class="col">
-              <b>સીટ:</b> <br> <%= @customer.shirt_seat %>
+              <b><i class="bi bi-arrows-move me-1"></i>જોરો:</b> <br> <%= @customer.pant_joro %>
             </div>
           </div>
         </div>
@@ -93,9 +65,39 @@
       <div class="col-lg-12 mt-2">
         <div class="card">
           <div class="row card-body">
-            <h5 class="card-title">નોંધ</h5>
+            <h5 class="card-title"><i class="bi bi-rulers me-2"></i>શર્ટની વિગતો</h5>
+            <div class="col">
+              <b><i class="bi bi-circle me-1"></i>કોલર:</b> <br> <%= @customer.shirt_kolar %>
+            </div>
+            <div class="col">
+              <b><i class="bi bi-arrows-vertical me-1"></i>લંબાઈ:</b> <br> <%= @customer.shirt_lambai %>
+            </div>
+            <div class="col">
+              <b><i class="bi bi-arrows-expand me-1"></i>શોલ્ડર:</b> <br> <%= @customer.shirt_shoulder %>
+            </div>
+            <div class="col">
+              <b><i class="bi bi-arrow-right me-1"></i>બાય:</b> <br> <%= @customer.shirt_baay %>
+            </div>
+            <div class="col">
+              <b><i class="bi bi-arrows-fullscreen me-1"></i>છાતી:</b> <br> <%= @customer.shirt_chhati %>
+            </div>
+            <div class="col">
+              <b><i class="bi bi-arrows-collapse me-1"></i>કમર:</b> <br> <%= @customer.shirt_kamar %>
+            </div>
+            <div class="col">
+              <b><i class="bi bi-arrows-angle-expand me-1"></i>સીટ:</b> <br> <%= @customer.shirt_seat %>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="col-lg-12 mt-2">
+        <div class="card">
+          <div class="row card-body">
+            <h5 class="card-title"><i class="bi bi-journal-text me-2"></i>નોંધ</h5>
             <div class="col p-2">
-              <%= @customer.notes %>
+              <i class="bi bi-pencil-square me-1"></i><%= @customer.notes %>
             </div>
           </div>
         </div>
@@ -106,10 +108,16 @@
 
 <div class="row mt-2">
   <div class="col-lg-6">
-    <%= link_to "ગ્રાહકમાં ફેરફાર કરો", edit_customer_path(@customer), class: "btn btn-outline-primary m-1" %> 
-    <%= link_to "<<< ગ્રાહકોની સૂચિ પર પાછા ફરો", customers_path, class: "btn btn-outline-primary m-1" %>
+    <%= link_to edit_customer_path(@customer), class: "btn btn-outline-primary m-1" do %>
+      <i class="bi bi-pencil-fill me-1"></i>ગ્રાહકમાં ફેરફાર કરો
+    <% end %>
+    <%= link_to customers_path, class: "btn btn-outline-primary m-1" do %>
+      <i class="bi bi-arrow-left-circle-fill me-1"></i>ગ્રાહકોની સૂચિ પર પાછા ફરો
+    <% end %>
   </div>
   <div class="col-lg-6">
-    <%= button_to "ગ્રાહકને દૂર કરો", @customer, method: :delete, class: "btn btn-outline-danger m-1" %>
+    <%= button_to @customer, method: :delete, class: "btn btn-outline-danger m-1" do %>
+      <i class="bi bi-trash-fill me-1"></i>ગ્રાહકને દૂર કરો
+    <% end %>
   </div>
 </div>

@@ -1,6 +1,6 @@
 
 <div class="pagetitle">
-  <h1>નવા ગ્રાહક ઉમેરો</h1>
+  <h1><i class="bi bi-person-plus-fill me-2"></i>નવા ગ્રાહક ઉમેરો</h1>
 </div>
 
 <%= render "form", customer: @customer %>
@@ -8,6 +8,8 @@
 
 <div class="row mt-2">
   <div class="col-lg-6">
-    <%= link_to "<<< ગ્રાહકોની સૂચિ પર પાછા ફરો", customers_path, class: "btn btn-outline-primary" %>
+    <%= link_to customers_path, class: "btn btn-outline-primary" do %>
+      <i class="bi bi-arrow-left-circle-fill me-1"></i>ગ્રાહકોની સૂચિ પર પાછા ફરો
+    <% end %>
   </div>
 </div>

@@ -4,7 +4,19 @@
   <td><%= customer.city %></td>
   <td><%= customer.contact %></td>
   <td><%= customer.delivery_date %></td>
-  <td><%= link_to "ગ્રાહકની માહિતી જુઓ", customer, class: "btn btn-outline-primary" %></td>
-  <td><%= link_to "ગ્રાહકમાં ફેરફાર કરો", edit_customer_path(customer), class: "btn btn-outline-secondary" %></td>
-  <td><%= button_to "ગ્રાહકને દૂર કરો", customer, method: :delete, class: "btn btn-outline-danger" %></td>
+  <td>
+    <%= link_to customer, class: "btn btn-outline-primary" do %>
+      <i class="bi bi-eye-fill me-1"></i>ગ્રાહકની માહિતી જુઓ
+    <% end %>
+  </td>
+  <td>
+    <%= link_to edit_customer_path(customer), class: "btn btn-outline-secondary" do %>
+      <i class="bi bi-pencil-fill me-1"></i>ગ્રાહકમાં ફેરફાર કરો
+    <% end %>
+  </td>
+  <td>
+    <%= button_to customer, method: :delete, class: "btn btn-outline-danger" do %>
+      <i class="bi bi-trash-fill me-1"></i>ગ્રાહકને દૂર કરો
+    <% end %>
+  </td>
 </tr>
