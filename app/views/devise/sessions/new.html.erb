@@ -1,26 +1,34 @@
 <div class="customLogin">
-  <h2>Log in</h2>
+  <h2><i class="bi bi-box-arrow-in-right me-2"></i>Log in</h2>
 
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-    <div class="col mt-2">
+    <div class="col mt-3">
       <%= f.label :email, class: "form-label" %>
-      <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control", required: true %>
+      <div class="input-group">
+        <span class="input-group-text"><i class="bi bi-envelope-fill"></i></span>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control", required: true, placeholder: "Enter your email" %>
+      </div>
     </div>
 
-    <div class="col mt-2">
+    <div class="col mt-3">
       <%= f.label :password, class: "form-label" %>
-      <%= f.password_field :password, autocomplete: "current-password", class:"form-control", required: true %>
+      <div class="input-group">
+        <span class="input-group-text"><i class="bi bi-lock-fill"></i></span>
+        <%= f.password_field :password, autocomplete: "current-password", class:"form-control", required: true, placeholder: "Enter your password" %>
+      </div>
     </div>
 
     <% if devise_mapping.rememberable? %>
-      <div class="col mt-2">
-        <%= f.check_box :remember_me %>
-        <%= f.label :remember_me %>
+      <div class="col mt-3 form-check">
+        <%= f.check_box :remember_me, class: "form-check-input" %>
+        <%= f.label :remember_me, class: "form-check-label" %>
       </div>
     <% end %>
 
-    <div class="actions mt-2 mb-2">
-      <%= f.submit "Log in", class: "btn btn-primary" %>
+    <div class="actions mt-3 mb-2 d-grid">
+      <%= f.button class: "btn btn-primary", type: "submit" do %>
+        <i class="bi bi-box-arrow-in-right me-1"></i>Log in
+      <% end %>
     </div>
   <% end %>
 
