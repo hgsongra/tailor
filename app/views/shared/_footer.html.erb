@@ -1,11 +1,17 @@
-
-  <footer class="py-2 my-2">
-    <ul class="nav justify-content-center border-bottom pb-3 mb-3">
-      <li class="nav-item"><b class="nav-link px-2 text-muted">સરનામું: </b></li>
-      <li class="nav-item"><span class="nav-link px-2 text-muted">રિધમ ટેઈલર, કો.ઓ. બેન્ક પાસે, વાણીયાવાડ, હળવદ ૩૬૩૩૩૦.</span></li>
-      <li class="nav-item"><b class="nav-link px-2 text-muted">મોબાઇલ નંબર: </b></li>
-      <li class="nav-item"><%= link_to "9033150596", "tel:+919033150596", class: "nav-link px-2 text-muted" %></li>
-      <li class="nav-item"><%= link_to "9925165607", "tel:+919925165607", class: "nav-link px-2 text-muted" %></li>
-    </ul>
-    <p class="text-center text-muted"><%= link_to "© #{Time.zone.now.year} Hitesh Songra", "https://in.linkedin.com/in/hgsongra", class: "nav-link px-2 text-muted" %>  </p>
-  </footer>
+<footer class="py-3 my-2">
+  <div class="container">
+    <div class="row text-center text-md-start border-bottom pb-3 mb-3">
+      <div class="col-12 col-md-6 mb-2 mb-md-0">
+        <b class="text-muted"><i class="bi bi-geo-alt-fill me-1"></i>સરનામું:</b>
+        <span class="text-muted d-block d-sm-inline ms-sm-2">રિધમ ટેઈલર, કો.ઓ. બેન્ક પાસે, વાણીયાવાડ, હળવદ ૩૬૩૩૩૦.</span>
+      </div>
+      <div class="col-12 col-md-6">
+        <b class="text-muted"><i class="bi bi-telephone-fill me-1"></i>મોબાઇલ નંબર:</b>
+        <%= link_to "9033150596", "tel:+919033150596", class: "text-muted ms-2" %>
+        <span class="text-muted">|</span>
+        <%= link_to "9925165607", "tel:+919925165607", class: "text-muted ms-2" %>
+      </div>
+    </div>
+    <p class="text-center text-muted mb-0"><%= link_to "© #{Time.zone.now.year} Hitesh Songra", "https://in.linkedin.com/in/hgsongra", class: "text-muted text-decoration-none" %></p>
+  </div>
+</footer>
