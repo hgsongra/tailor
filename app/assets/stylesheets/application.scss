@@ -35,6 +35,82 @@
     border-radius: 10px;
 }
 
+// Responsive navbar logo
+.navbar-logo {
+    max-width: 330px;
+    width: 100%;
+    height: auto;
+}
+
+// Mobile-first responsive adjustments
+@media (max-width: 575.98px) {
+    .navbar-logo {
+        max-width: 200px;
+    }
+    
+    .main {
+        padding: 0.75rem !important;
+    }
+    
+    .pagetitle h1 {
+        font-size: 1.25rem;
+    }
+    
+    .card-title {
+        font-size: 1rem;
+    }
+    
+    .customLogin {
+        padding: 20px;
+        margin: 10px;
+        max-width: calc(100% - 20px);
+    }
+    
+    // Make input groups more touch-friendly
+    .input-group-text {
+        padding: 0.5rem 0.75rem;
+    }
+    
+    .form-control {
+        padding: 0.5rem 0.75rem;
+    }
+    
+    // Pagination mobile styling
+    .custom-page {
+        text-align: center;
+    }
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .navbar-logo {
+        max-width: 250px;
+    }
+}
+
+// Utility class for width on small screens and above
+@media (min-width: 576px) {
+    .w-sm-auto {
+        width: auto !important;
+    }
+}
+
+@media (min-width: 992px) {
+    .w-lg-auto {
+        width: auto !important;
+    }
+}
+
+// Touch-friendly button sizing on mobile
+@media (max-width: 767.98px) {
+    .btn {
+        padding: 0.5rem 1rem;
+    }
+    
+    .btn-sm {
+        padding: 0.375rem 0.5rem;
+    }
+}
+
 @media print {
     .btn, .navbar-toggler {
       display: none;
