@@ -5,7 +5,7 @@ class CustomersController < ApplicationController
   # GET /customers or /customers.json
   def index
     search_query = "%#{params[:query]&.downcase}%"
-    @customers = Customer.where('LOWER(name) LIKE :q OR LOWER(city) LIKE :q OR LOWER(contact) LIKE :q', q: search_query).page(params[:page] || 1)
+    @customers = Customer.where('LOWER(name) LIKE :q OR LOWER(city) LIKE :q OR LOWER(contact) LIKE :q OR customer_no LIKE :q', q: search_query).page(params[:page] || 1)
   end
 
   # GET /customers/1 or /customers/1.json
@@ -67,6 +67,6 @@ class CustomersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def customer_params
-      params.require(:customer).permit(:name, :city, :contact, :pant_lambai, :pant_mori, :pant_kamar, :pant_seat, :pant_jang, :pant_joro, :shirt_kolar, :shirt_lambai, :shirt_shoulder, :shirt_baay, :shirt_chhati, :shirt_kamar, :shirt_seat, :delivery_date, :notes)
+      params.require(:customer).permit(:customer_no, :name, :city, :contact, :pant_lambai, :pant_mori, :pant_kamar, :pant_seat, :pant_jang, :pant_joro, :shirt_kolar, :shirt_lambai, :shirt_shoulder, :shirt_baay, :shirt_chhati, :shirt_kamar, :shirt_seat, :shirt_kaf, :delivery_date, :notes)
     end
 end
