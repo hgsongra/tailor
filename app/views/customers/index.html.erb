@@ -6,7 +6,7 @@
     <%= form_tag root_path, method: :get, class: "d-flex" do %>
       <div class="input-group">
         <span class="input-group-text"><i class="bi bi-search"></i></span>
-        <%= text_field_tag :query, params[:query], class: "form-control", type: "search", placeholder: "નામ/ગામ/મોબાઇલ થી શોધો...", "aria-label": "Search"  %>
+        <%= text_field_tag :query, params[:query], class: "form-control", type: "search", placeholder: "ગ્રાહક નંબર/નામ/ગામ/મોબાઇલ નંબર થી શોધો...", "aria-label": "Search"  %>
         <button type="submit" class="btn btn-success"><i class="bi bi-search me-1"></i>શોધો</button>
       </div>
     <%end%>
@@ -29,7 +29,7 @@
           <table class="table table-hover">
             <thead>
               <tr>
-                <th scope="col"><i class="bi bi-person-badge me-1"></i><%= "ગ્રાહક#" %></th>
+                <th scope="col"><i class="bi bi-person-badge me-1"></i>ગ્રાહક નંબર</th>
                 <th scope="col"><i class="bi bi-person-fill me-1"></i>નામ</th>
                 <th scope="col" class="d-none d-md-table-cell"><i class="bi bi-geo-alt-fill me-1"></i>ગામ</th>
                 <th scope="col" class="d-none d-md-table-cell"><i class="bi bi-telephone-fill me-1"></i>મોબાઇલ નંબર</th>

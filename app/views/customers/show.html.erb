@@ -14,10 +14,10 @@
       <div class="col-12 mt-2">
         <div class="card">
           <div class="card-body">
-            <h5 class="card-title"><i class="bi bi-person-vcard me-2"></i>ગ્રાહકની વિગતો</h5>
+            <h5 class="card-title mb-3"><i class="bi bi-person-vcard me-2"></i>ગ્રાહકની વિગતો</h5>
             <div class="row g-3">
               <div class="col-6 col-sm-4 col-lg">
-                <b><i class="bi bi-person-badge me-1"></i><%= "ગ્રાહક#" %></b> <br> <%= @customer.id %>
+                <b><i class="bi bi-person-badge me-1"></i>ગ્રાહક નંબર:</b> <br> <%= @customer.customer_no %>
               </div>
               <div class="col-6 col-sm-4 col-lg">
                 <b><i class="bi bi-person-fill me-1"></i>નામ:</b> <br> <%= @customer.name %>
@@ -39,7 +39,7 @@
       <div class="col-12 mt-2">
         <div class="card">
           <div class="card-body">
-            <h5 class="card-title"><i class="bi bi-rulers me-2"></i>પેન્ટની વિગતો</h5>
+            <h5 class="card-title mb-3"><i class="bi bi-rulers me-2"></i>પેન્ટની વિગતો</h5>
             <div class="row g-3">
               <div class="col-4 col-sm-4 col-lg-2">
                 <b><i class="bi bi-arrows-vertical me-1"></i>લંબાઈ:</b> <br> <%= @customer.pant_lambai %>
@@ -68,7 +68,7 @@
       <div class="col-12 mt-2">
         <div class="card">
           <div class="card-body">
-            <h5 class="card-title"><i class="bi bi-rulers me-2"></i>શર્ટની વિગતો</h5>
+            <h5 class="card-title mb-3"><i class="bi bi-rulers me-2"></i>શર્ટની વિગતો</h5>
             <div class="row g-3">
               <div class="col-4 col-sm-3 col-lg">
                 <b><i class="bi bi-circle me-1"></i>કોલર:</b> <br> <%= @customer.shirt_kolar %>
@@ -91,6 +91,9 @@
               <div class="col-4 col-sm-3 col-lg">
                 <b><i class="bi bi-arrows-angle-expand me-1"></i>સીટ:</b> <br> <%= @customer.shirt_seat %>
               </div>
+              <div class="col-4 col-sm-3 col-lg">
+                <b><i class="bi bi-grip-horizontal me-1"></i>કફ:</b> <br> <%= @customer.shirt_kaf %>
+              </div>
             </div>
           </div>
         </div>
@@ -100,7 +103,7 @@
       <div class="col-12 mt-2">
         <div class="card">
           <div class="card-body">
-            <h5 class="card-title"><i class="bi bi-journal-text me-2"></i>નોંધ</h5>
+            <h5 class="card-title mb-3"><i class="bi bi-journal-text me-2"></i>નોંધ</h5>
             <div class="p-2">
               <i class="bi bi-pencil-square me-1"></i><%= @customer.notes %>
             </div>
