@@ -4,7 +4,7 @@ class BackupsController < ApplicationController
   def index
     @backup_file = Rails.root.join("db", "backups", "daily_backup.json")
     @backup_exists = File.exist?(@backup_file)
-    @backup_time = @backup_exists ? File.mtime(@backup_file) : nil
+    @backup_time = @backup_exists ? File.mtime(@backup_file).in_time_zone("Asia/Kolkata") : nil
   end
 
   def export
