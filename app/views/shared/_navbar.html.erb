@@ -2,9 +2,14 @@
   <div class="container-fluid">
     <a class="navbar-brand" href="/"><%=image_tag("rt.png", class: "navbar-logo", alt: "Ridham tailors")%></a>
     <% if user_signed_in? %>
-      <%= button_to destroy_user_session_path, method: :delete, class: "btn btn-danger btn-sm" do %>
-        <i class="bi bi-box-arrow-right"></i><span class="d-none d-sm-inline ms-1">સાઇન આઉટ કરો</span>
-      <% end %>
+      <div class="d-flex gap-2">
+        <%= link_to backup_path, class: "btn btn-outline-primary btn-sm" do %>
+          <i class="bi bi-database"></i><span class="d-none d-sm-inline ms-1">બેકઅપ</span>
+        <% end %>
+        <%= button_to destroy_user_session_path, method: :delete, class: "btn btn-danger btn-sm" do %>
+          <i class="bi bi-box-arrow-right"></i><span class="d-none d-sm-inline ms-1">સાઇન આઉટ કરો</span>
+        <% end %>
+      </div>
     <%end%>
   </div>
 </nav>
