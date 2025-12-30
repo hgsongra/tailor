@@ -1,0 +1,84 @@
+<div class="container mt-4">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <h2 class="mb-4"><i class="bi bi-database"></i> ડેટાબેઝ બેકઅપ</h2>
+
+      <% if flash[:notice] %>
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+          <%= flash[:notice] %>
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+      <% end %>
+
+      <% if flash[:alert] %>
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+          <%= flash[:alert] %>
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+      <% end %>
+
+      <!-- Daily Backup Section -->
+      <div class="card mb-4">
+        <div class="card-header bg-info text-white">
+          <i class="bi bi-clock-history"></i> દૈનિક બેકઅપ (Daily Backup)
+        </div>
+        <div class="card-body">
+          <p class="card-text">દરરોજ મધ્યરાત્રિએ આપમેળે બેકઅપ લેવામાં આવે છે.</p>
+          
+          <% if @backup_exists %>
+            <div class="alert alert-success">
+              <i class="bi bi-check-circle"></i> 
+              <strong>છેલ્લો બેકઅપ:</strong> <%= @backup_time.strftime("%d/%m/%Y %I:%M %p") %>
+            </div>
+            <%= link_to backup_download_daily_path, class: "btn btn-info" do %>
+              <i class="bi bi-download"></i> દૈનિક બેકઅપ ડાઉનલોડ કરો
+            <% end %>
+          <% else %>
+            <div class="alert alert-warning">
+              <i class="bi bi-exclamation-triangle"></i> હજુ સુધી કોઈ દૈનિક બેકઅપ નથી
+            </div>
+          <% end %>
+        </div>
+      </div>
+
+      <!-- Export Section -->
+      <div class="card mb-4">
+        <div class="card-header bg-primary text-white">
+          <i class="bi bi-download"></i> નિકાસ (Export)
+        </div>
+        <div class="card-body">
+          <p class="card-text">તમામ ગ્રાહક ડેટાને JSON ફાઇલ તરીકે ડાઉનલોડ કરો.</p>
+          <p class="text-muted small">કુલ ગ્રાહકો: <strong><%= Customer.count %></strong></p>
+          <%= link_to backup_export_path, class: "btn btn-primary" do %>
+            <i class="bi bi-download"></i> બેકઅપ ડાઉનલોડ કરો
+          <% end %>
+        </div>
+      </div>
+
+      <!-- Import Section -->
+      <div class="card">
+        <div class="card-header bg-success text-white">
+          <i class="bi bi-upload"></i> આયાત (Import)
+        </div>
+        <div class="card-body">
+          <p class="card-text">JSON બેકઅપ ફાઇલમાંથી ગ્રાહક ડેટા આયાત કરો.</p>
+          <p class="text-warning small"><i class="bi bi-exclamation-triangle"></i> નોંધ: હાલના ગ્રાહક નંબરો સાથે રેકોર્ડ્સ છોડી દેવામાં આવશે.</p>
+          
+          <%= form_tag backup_import_path, method: :post, multipart: true, class: "mt-3" do %>
+            <div class="mb-3">
+              <label for="backup_file" class="form-label">બેકઅપ ફાઇલ પસંદ કરો (.json)</label>
+              <%= file_field_tag :backup_file, class: "form-control", accept: ".json" %>
+            </div>
+            <%= submit_tag "આયાત કરો", class: "btn btn-success" %>
+          <% end %>
+        </div>
+      </div>
+
+      <div class="mt-4">
+        <%= link_to root_path, class: "btn btn-outline-secondary" do %>
+          <i class="bi bi-arrow-left"></i> પાછા જાઓ
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
