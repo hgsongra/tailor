@@ -8,13 +8,17 @@ class BackupsController < ApplicationController
   end
 
   def export
-    timestamp = Time.current.strftime("%Y%m%d_%H%M%S")
-    filename = "tailor_backup_#{timestamp}.json"
+    backup_dir = Rails.root.join("db", "backups")
+    FileUtils.mkdir_p(backup_dir)
 
+    backup_file = backup_dir.join("daily_backup.json")
     backup_data = generate_backup_json
 
-    send_data backup_data.to_json,
-              filename: filename,
+    # Save to the same file as scheduler
+    File.write(backup_file, JSON.pretty_generate(backup_data))
+
+    send_file backup_file,
+              filename: "daily_backup.json",
               type: "application/json",
               disposition: "attachment"
   end
